@@ -13,6 +13,14 @@ import java.util.stream.IntStream;
  */
 public class NationalCodeValidator {
 
+    /**
+     * Validates national code for valid format and characters
+     *
+     * @param code National code
+     * @return Optional of NationalCode if its valid or empty optional on invalid format
+     * @throws InvalidLengthException Throws on invalid length
+     * @throws InvalidFormatException Throws on invalid format
+     */
     public Optional<NationalCode> validate(String code) throws InvalidLengthException, InvalidFormatException {
         NationalCode nationalCode = new NationalCode(code);
         if (nationalCode.getCode().matches(".*\\D+.*")) {
@@ -37,6 +45,13 @@ public class NationalCodeValidator {
         return Optional.empty();
     }
 
+    /**
+     * Checks that if national code length is 10
+     *
+     * @param nationalCode National code
+     * @return Returns true if length is valid
+     * @author Amir Mohammad Hl
+     */
     public boolean hasValidLength(NationalCode nationalCode) {
         return nationalCode.getCode().matches("^\\d{10}$");
     }
