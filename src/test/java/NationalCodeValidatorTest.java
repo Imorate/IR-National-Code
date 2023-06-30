@@ -1,4 +1,4 @@
-import exception.InvalidFormatException;
+import exception.BadCharacterException;
 import exception.InvalidLengthException;
 import model.NationalCode;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,8 +47,8 @@ class NationalCodeValidatorTest {
     @ParameterizedTest
     @ValueSource(strings = {"1234567a", "a", "1234567*", "#123456", "987654@123"})
     void shouldThrowExceptionOnNonNumericalCharacters(String code) {
-        assertThatThrownBy(() -> nationalCodeValidator.validate(code)).isInstanceOf(InvalidFormatException.class)
-                .hasMessage("Invalid character(s) in national code");
+        assertThatThrownBy(() -> nationalCodeValidator.validate(code)).isInstanceOf(BadCharacterException.class)
+                .hasMessage("Bad character(s) in national code");
     }
 
     @DisplayName("Invalid national codes with invalid length")

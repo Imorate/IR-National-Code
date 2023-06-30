@@ -1,4 +1,4 @@
-import exception.InvalidFormatException;
+import exception.BadCharacterException;
 import exception.InvalidLengthException;
 import model.NationalCode;
 
@@ -18,13 +18,13 @@ public class NationalCodeValidator {
      *
      * @param code National code
      * @return Optional of NationalCode if its valid or empty optional on invalid format
-     * @throws InvalidLengthException Throws on invalid length
-     * @throws InvalidFormatException Throws on invalid format
+     * @throws InvalidLengthException If the length is invalid
+     * @throws BadCharacterException If the bad characters exists
      */
-    public Optional<NationalCode> validate(String code) throws InvalidLengthException, InvalidFormatException {
+    public Optional<NationalCode> validate(String code) throws InvalidLengthException, BadCharacterException {
         NationalCode nationalCode = new NationalCode(code);
         if (nationalCode.getCode().matches(".*\\D+.*")) {
-            throw new InvalidFormatException("Invalid character(s) in national code");
+            throw new BadCharacterException("Bad character(s) in national code");
         }
         if (!hasValidLength(nationalCode)) {
             throw new InvalidLengthException("Invalid national code length. A valid national code length is 10");
