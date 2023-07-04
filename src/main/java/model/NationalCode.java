@@ -7,7 +7,7 @@ import lombok.NonNull;
  * National code POJO class
  *
  * @author Amir Mohammad Hl
- * @version 1.0.0
+ * @version 1.0
  */
 @Data
 public class NationalCode {

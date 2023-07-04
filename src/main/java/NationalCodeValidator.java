@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * National code validator
  *
  * @author Amir Mohammad Hl
- * @version 1.0.0
+ * @version 1.0
  */
 public class NationalCodeValidator {
 
@@ -17,7 +17,7 @@ public class NationalCodeValidator {
      * Validates national code for valid format and characters
      *
      * @param code National code
-     * @return Optional of NationalCode if its valid or empty optional on invalid format
+     * @return Optional of <a href="#{@link}">{@link NationalCode}</a> if its valid or empty <a href="#{@link}">{@link Optional}</a> on invalid format
      * @throws InvalidLengthException If the length is invalid
      * @throws BadCharacterException If the bad characters exists
      */
@@ -48,9 +48,8 @@ public class NationalCodeValidator {
     /**
      * Checks that if national code length is 10
      *
-     * @param nationalCode National code
+     * @param nationalCode <a href="#{@link}">{@link NationalCode}</a>
      * @return Returns true if length is valid
-     * @author Amir Mohammad Hl
      */
     public boolean hasValidLength(NationalCode nationalCode) {
         return nationalCode.getCode().matches("^\\d{10}$");
