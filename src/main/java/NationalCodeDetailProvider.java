@@ -15,8 +15,8 @@ public class NationalCodeDetailProvider {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("details.json");
         TypeReference<Map<String, List<String>>> typeReference = new TypeReference<Map<String, List<String>>>() {};
         Map<String, List<String>> detailsMap = objectMapper.readValue(inputStream, typeReference);
-        String firstThreeDigit = nationalCode.getCode().substring(0, 3);
-        List<String> details = detailsMap.get(firstThreeDigit);
+        String firstThreeDigits = nationalCode.getCode().substring(0, 3);
+        List<String> details = detailsMap.get(firstThreeDigits);
         if (details == null) {
             return Optional.empty();
         }
