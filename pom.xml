@@ -9,6 +9,7 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>Iran model.NationalCode</name>
+    <url>https://github.com/Imorate/IR-National-Code</url>
 
     <developers>
         <developer>
@@ -16,6 +17,14 @@
             <email>dev.imorate@gmail.com</email>
         </developer>
     </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
